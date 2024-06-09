@@ -73,3 +73,11 @@ ALTER SEQUENCE public.password_reset_links_id_seq
 - Password recovery link will be shown in console, copy and paste in the browser to see "update password" page. modify `lib/auth.js` > `generatePasswordLink()` to use the generated link the way you like, i.e send to user by email.
 - For simplicity, user fields are: name, email and password. You can add more fields that suit your needs. You will need to update `types/user.ts` and `data/users.ts` > `mapUser()` to match the required fields.
 - In `.env.local` > `ENCRYPT_SECRET` can be any key of your choice. Be aware that if you change it later, current users won't be able to log in as their passwords have already been encrypted with the old secret.
+
+## Screenshots
+![Home page (not logged in)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/1-not-logged-in.png)
+![Login page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/2-login-page.png)
+![Forget password page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/3-forget-password.png)
+![Update password page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/4-update-password.png)![Sign up)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/5-signup.png)
+![Home page (logged in)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/6-logged-in.png)
+![Edit account)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/7-edit-account.png)
