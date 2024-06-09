@@ -128,8 +128,12 @@ export async function generatePasswordLink(_currentState: unknown, formData: For
   if (!email) return { error: 'Email cannot be empty' };
 
   const result = await createPasswordReset(email);
-  const resetLink = `${baseDomain}/signup/forgot-password/${result?.token}`;
-  console.log('🚀 ~ generatePasswordLink ~ resetLink:', resetLink);
+  if (result?.token) {
+    const resetLink = `${baseDomain}/signup/forgot-password/${result?.token}`;
+    console.log('🚀 ~ generatePasswordLink ~ resetLink:', resetLink);
+  } else {
+    console.log('🚀 Failed to generate password link.');
+  }
 
   return { error: null, success: true };
 }

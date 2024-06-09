@@ -8,9 +8,9 @@ import Header from './header';
 import { getSession } from './lib/auth';
 
 export const metadata: Metadata = {
-  title: 'Create your wish list - reduce waste today',
+  title: 'Nextjs Native Auth',
   description:
-    'Create your wish list, share with friends and get the gifts you only wish for',
+    'Auth starter app, using native NextJs, no auth library used',
   icons: [{ rel: 'icon', url: '/favicon.png' }],
 };
 
