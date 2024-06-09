@@ -1,32 +1,29 @@
 ## About
-This is a native NextJs auth starter app. No auth library required.
-The app uses cookies to store the sessions and Postgres to store user information.
-
+This is a native Next.js authentication starter app that does not require any external authentication libraries. The application leverages cookies for session management and uses PostgreSQL for storing user information securely.
 
 ## Features
-- Login
-- Sign up
-- Logout
-- Edit account details
-- Forget password/generate password link
-  - Expires in 30 mins, or;
-  - Expires after one use
-- Update password using generated link
-- Password encryption
-- Session timeout
+- **Login**: Authenticate users by verifying their credentials.
+- **Sign up**: Allow new users to create an account with a username, email, and password.
+- **Logout**: Securely log out users and terminate their sessions.
+- **Edit account details**: Enable users to update their profile information such as name and password.
+- **Forgot password/generate password link**: Provide a mechanism for users to reset their passwords by generating a unique link.
+  - The reset link is configured to expire in 30 minutes or after a single use.
+- **Update password using generated link**: Allow users to securely update their password through the provided reset link.
+- **Password encryption**: Ensure user passwords are stored securely using encryption.
+- **Session timeout**: Automatically log out users after a period of inactivity to enhance security.
+
 ## Stack
-- NextJS
-- Typescript
-- Postgres for database
-- `material-ui` for interface and icons
-- `jose` and `bcrypt` for encryption/decryption
+- **Next.js**
+- **TypeScript**
+- **PostgreSQL** for storing user information.
+- **Material-UI** for user interfaces and icons.
+- **jose** and **bcrypt**: for encryption and decryption of passwords and sessios (using `jwt`) to ensure secure handling of sensitive data.
 
 ## Getting started
-- Run `npm install`
-- Copy `.env.example` into a new file `.env.local`
-- Fill the missing values in `.env.local` i.e database connection and session details
-- Create a new database (or use database already exists)
-- Run the following SQL to create required tables
+1. Run `npm install` to install all necessary dependencies.
+2. Copy `.env.example` into a new file named `.env.local`.
+3. Fill in the missing values in `.env.local`, such as database connection details and session settings.
+4. Create a new PostgreSQL database or use an existing one for the application.
 ```sql
 CREATE TABLE IF NOT EXISTS public.users
 (
@@ -64,15 +61,16 @@ CREATE TABLE IF NOT EXISTS public.password_resets
 ALTER SEQUENCE public.password_reset_links_id_seq
     OWNED BY public.password_resets.id;
 ```
-- Run `npm run dev`
-- Navigate to `http://localhost:3000`
+5. Run `npm run dev`
+6. Navigate to `http://localhost:3000`
 
 
 ## Notes
-- Feel free to use database of your choice, you will just need to modify the code in `data/` folder to read/write data to your DB
-- Password recovery link will be shown in console, copy and paste in the browser to see "update password" page. modify `lib/auth.js` > `generatePasswordLink()` to use the generated link the way you like, i.e send to user by email.
-- For simplicity, user fields are: name, email and password. You can add more fields that suit your needs. You will need to update `types/user.ts` and `data/users.ts` > `mapUser()` to match the required fields.
-- In `.env.local` > `ENCRYPT_SECRET` can be any key of your choice. Be aware that if you change it later, current users won't be able to log in as their passwords have already been encrypted with the old secret.
+- You are free to use the database of your choice. However, you will need to modify the code in the `data/` folder to read from and write to your chosen database.
+- The password recovery link will be displayed in the console. Copy and paste it into the browser to access the "update password" page. Modify `lib/auth.js` > `generatePasswordLink()` to use the generated link as you prefer, such as sending it to the user via email.
+- For simplicity, the user fields are: name, email, and password. You can add additional fields to suit your needs. Update `types/user.ts` and `data/users.ts` > `mapUser()` to match the new fields.
+- In `.env.local`, the `ENCRYPT_SECRET` can be any key of your choice. Be aware that if you change it later, current users will not be able to log in as their passwords have been encrypted with the previous secret.
+
 
 ## Screenshots
 ##### Home page (not logged in)
