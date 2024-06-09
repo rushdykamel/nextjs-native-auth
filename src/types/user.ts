@@ -4,7 +4,6 @@ type User = {
   email: string
   password: string
   dateCreated: string
-  dateModified: string
 }
 
 export default User;

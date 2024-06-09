@@ -89,6 +89,5 @@ function mapUser(user: any): User | null {
     email: user.email,
     password: user.password,
     dateCreated: user.date_created,
-    dateModified: user.date_modified,
   };
 }
