@@ -75,9 +75,23 @@ ALTER SEQUENCE public.password_reset_links_id_seq
 - In `.env.local` > `ENCRYPT_SECRET` can be any key of your choice. Be aware that if you change it later, current users won't be able to log in as their passwords have already been encrypted with the old secret.
 
 ## Screenshots
+##### Home page (not logged in)
 ![Home page (not logged in)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/1-not-logged-in.png)
-![Login page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/2-login-page.png)
-![Forget password page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/3-forget-password.png)
-![Update password page)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/4-update-password.png)![Sign up)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/5-signup.png)
+
+##### Login page
+![Login page](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/2-login-page.png)
+
+##### Forget password page
+![Forget password page](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/3-forget-password.png)
+
+##### Update password page
+![Update password page](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/4-update-password.png)
+
+##### Sign up page
+![Sign up](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/5-signup.png)
+
+##### Home page (logged in)
 ![Home page (logged in)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/6-logged-in.png)
-![Edit account)](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/7-edit-account.png)
+
+##### Edit account
+![Edit account](https://raw.githubusercontent.com/rushdykamel/nextjs-native-auth/main/screenshots/7-edit-account.png)
