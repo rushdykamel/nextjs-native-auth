@@ -24,7 +24,7 @@ The app uses cookies to store the sessions and Postgres to store user informatio
 ## Getting started
 - Run `npm install`
 - Copy `.env.example` into a new file `.env.local`
-- Fill the missing values in `.env.local` i.e database connection details
+- Fill the missing values in `.env.local` i.e database connection and session details
 - Create a new database (or use database already exists)
 - Run the following SQL to create required tables
 ```sql
@@ -71,4 +71,5 @@ ALTER SEQUENCE public.password_reset_links_id_seq
 ## Notes
 - Feel free to use database of your choice, you will just need to modify the code in `data/` folder to read/write data to your DB
 - Password recovery link will be shown in console, copy and paste in the browser to see "update password" page. modify `lib/auth.js` > `generatePasswordLink()` to use the generated link the way you like, i.e send to user by email.
-- For simplicity, user fields are just name, email and password. You can add more fields that suit your needs. You will need to update `types/user.ts` and `data/users.ts` > `mapUser()` to match the required fields.
+- For simplicity, user fields are: name, email and password. You can add more fields that suit your needs. You will need to update `types/user.ts` and `data/users.ts` > `mapUser()` to match the required fields.
+- In `.env.local` > `ENCRYPT_SECRET` can be any key of your choice. Be aware that if you change it later, current users won't be able to log in as their passwords have already been encrypted with the old secret.
