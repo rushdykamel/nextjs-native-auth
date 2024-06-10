@@ -24,6 +24,7 @@ This is a native Next.js authentication starter app that does not require any ex
 2. Copy `.env.example` into a new file named `.env.local`.
 3. Fill in the missing values in `.env.local`, such as database connection details and session settings.
 4. Create a new PostgreSQL database or use an existing one for the application.
+5. Run the following SQL script to create the required tables
 ```sql
 CREATE TABLE IF NOT EXISTS public.users
 (
